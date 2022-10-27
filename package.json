@@ -1,5 +1,5 @@
 {
-  "name": "react-animation",
+  "name": "react-animount",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/javeoff/react-animation.git"
+    "url": "git+https://github.com/javeoff/react-animount.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/javeoff/react-animation/issues"
+    "url": "https://github.com/javeoff/react-animount/issues"
   },
-  "homepage": "https://github.com/javeoff/react-animation#readme",
+  "homepage": "https://github.com/javeoff/react-animount#readme",
   "dependencies": {
     "react": "^18.2.0"
   },
