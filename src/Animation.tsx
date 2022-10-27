@@ -1,5 +1,4 @@
-import { Dispatch, FC, ReactNode, useRef } from 'react';
-import { useMountEffect } from './hooks/useMountEffect';
+import { Dispatch, FC, ReactNode, useEffect, useRef } from 'react';
 
 interface IProps {
   children: ReactNode;
@@ -15,8 +14,9 @@ export const Animation: FC<IProps> = ({
   children,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const isFirstMount = useRef<boolean>(true);
 
-  useMountEffect(() => {
+  useEffect(() => {
     const _wrapper = wrapperRef.current;
     const _parent = wrapperRef.current?.parentElement;
 
@@ -26,23 +26,16 @@ export const Animation: FC<IProps> = ({
 
     const div = document.createElement('div');
 
-    _wrapper.style.display = 'none';
-    div.style.position = 'absolute';
-    div.innerHTML = _wrapper.innerHTML;
-
     _parent.append(div);
-
-    return {
-      onMount: () => {
-        div.style.transition = `all ${duration / 1_000}s`;
-        onAnimationStart(div);
-      },
-      onUnmount: () => {
+    _parent.addEventListener(
+      'DOMNodeRemoved',
+      () => {
         if (!_parent || !_wrapper) {
           return;
         }
 
-        div.style.transition = `all ${duration / 1_000}s`;
+        div.style.animation = '';
+        div.style.display = 'block';
 
         onAnimationEnd(div);
 
@@ -50,10 +43,21 @@ export const Animation: FC<IProps> = ({
           div.remove();
         }, duration);
       },
-      onRemount: () => {
-        div.remove();
-      },
-    };
+      true,
+    );
+
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      _wrapper.style.display = 'none';
+      div.innerHTML = _wrapper.innerHTML;
+
+      onAnimationStart(div);
+
+      setTimeout(() => {
+        _wrapper.style.display = 'block';
+        div.style.display = 'none';
+      }, duration);
+    }
   }, [children]);
 
   return <div ref={wrapperRef}>{children}</div>;

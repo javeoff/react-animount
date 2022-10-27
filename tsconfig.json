@@ -1,24 +1,27 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "baseUrl": "./",
+    "target": "es5",
+    "outDir": "dist",
+    "rootDir": "src",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "target": "esnext",
     "module": "ESNext",
     "jsx": "react-jsx",
     "declaration": true,
-    "noEmit": false,
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "noUncheckedIndexedAccess": true,
     "incremental": true,
     "noImplicitOverride": true,
     "isolatedModules": false,
-    "composite": true
+    "composite": true,
+    "sourceMap": false
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
