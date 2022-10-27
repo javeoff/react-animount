@@ -1,0 +1,28 @@
+{
+  "name": "react-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javeoff/react-animation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javeoff/react-animation/issues"
+  },
+  "homepage": "https://github.com/javeoff/react-animation#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "@types/react": "^18.0.24",
+    "typescript": "^4.8.4"
+  }
+}

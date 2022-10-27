@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "baseUrl": "./",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "noEmit": false,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "noUncheckedIndexedAccess": true,
+    "incremental": true,
+    "noImplicitOverride": true,
+    "isolatedModules": false,
+    "composite": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+  ]
+}
