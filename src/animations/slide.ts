@@ -4,7 +4,7 @@ import { createGetAnimationEndHandle } from '../utils/createGetAnimationEndHandl
 
 const slideLeft = {
   from: `
-    margin-right: -100%;
+    margin-right: -10px;
     opacity: 0;
   `,
   to: `
@@ -27,7 +27,7 @@ export const getSlideLeftEndHandle = createGetAnimationEndHandle(
 
 const slideRight = {
   from: `
-    margin-left: -100%;
+    margin-left: -10px;
     opacity: 0;
   `,
   to: `
@@ -50,7 +50,7 @@ export const getSlideRightEndHandle = createGetAnimationEndHandle(
 
 const slideUp = {
   from: `
-    margin-bottom: -100%;
+    margin-bottom: -10px;
     opacity: 0;
   `,
   to: `
@@ -73,7 +73,7 @@ export const getSlideUpEndHandle = createGetAnimationEndHandle(
 
 const slideDown = {
   from: `
-    margin-top: -100%;
+    margin-top: -10px;
     opacity: 0;
   `,
   to: `
