@@ -7,6 +7,12 @@ interface IProps {
   onAnimationEnd: Dispatch<HTMLDivElement>;
 }
 
+/**
+ * @param duration - animation duration in milliseconds
+ * @param onAnimationStart - triggers on mounting component, provides div wrapper to set an animation
+ * @param onAnimationEnd - triggers on unmounting component, provides div wrapper to set an animation
+ * @param children - react node - string, ReactElement, Array of string or ReactElement
+ */
 export const Animation: FC<IProps> = ({
   duration = 200,
   onAnimationStart,
